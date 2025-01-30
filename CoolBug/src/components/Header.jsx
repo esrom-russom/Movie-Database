@@ -1,10 +1,25 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import { APP_TITLE } from "../globals/globals";
 function Header() {
   return (
-    <Header>
+    <header>
       <h1>{APP_TITLE}</h1>
-    </Header>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/">Favorites</Link>
+          </li>
+          <li>
+            <Link to="/">About</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 
