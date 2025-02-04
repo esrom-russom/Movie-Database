@@ -1,7 +1,11 @@
 import "./Footer.css";
 
 function Footer() {
-  return <div>Footer</div>;
+  return;
+  <footer>
+    <p>Footer</p>
+    <p>copyright {new Date().getFullYear()}</p>
+  </footer>;
 }
 
 export default Footer;
