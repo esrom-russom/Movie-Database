@@ -19,6 +19,7 @@ function PageHome() {
   }, []);
   return (
     <div>
+      <h1>Home Page</h1>
       {/* <Movies title="Popular Movies" movies={popularMovies} /> */}
       <Movies title="Popular Movies" movies={popularMovies} />
     </div>

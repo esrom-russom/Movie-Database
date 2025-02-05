@@ -1,4 +1,8 @@
 import "./MoviesCard.css";
+import {IMG_URL} from "../globals/globals";
+import {formatReleaseDate, formatRating} from "../utilities/toolbelt";
+import {useNavigate} from "react-router-dom";
+import {FavoriteButton} from "../components/FavoriteButton";
 // {
 //     "adult": false,
 //     "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
@@ -21,12 +25,24 @@ import "./MoviesCard.css";
 //     "vote_count": 1476
 // }
 function MoviesCard({ movie }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="movie-card">
-      <img
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={movie.title}
+    <div onClick={()=> navigate(`/movie/${movie.id}`)} className="movie-card">
+      <img alt={movie.title}
+        src={`${IMG_URL}w342${movie.poster_path}`}
       />
+      <div className="backdrop">
+        <div className="title-and-release">
+          <h2>{movie.title}</h2>
+          <p>{formatReleaseDate(movie.release_date)}</p>
+        </div>
+        <div className="rating-and-favorite">
+          <h2>{formatRating(movie.vote_average)}</h2>
+          <FavoriteButton movie={movie}/>
+          <button>☆</button>
+        </div>
+      </div> 
     </div>
   );
 }
