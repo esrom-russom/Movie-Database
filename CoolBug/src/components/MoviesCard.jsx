@@ -2,7 +2,7 @@ import "./MoviesCard.css";
 import {IMG_URL} from "../globals/globals";
 import {formatReleaseDate, formatRating} from "../utilities/toolbelt";
 import {useNavigate} from "react-router-dom";
-import {FavoriteButton} from "../components/FavoriteButton";
+import FavoriteButton from "../components/FavoriteButton";
 // {
 //     "adult": false,
 //     "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
