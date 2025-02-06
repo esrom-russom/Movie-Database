@@ -1,7 +1,7 @@
 import "./MoviesCard.css";
-import {IMG_URL} from "../globals/globals";
-import {formatReleaseDate, formatRating} from "../utilities/toolbelt";
-import {useNavigate} from "react-router-dom";
+import { IMG_URL } from "../globals/globals";
+import { formatReleaseDate, formatRating } from "../utilities/toolbelt";
+import { useNavigate } from "react-router-dom";
 import FavoriteButton from "../components/FavoriteButton";
 // {
 //     "adult": false,
@@ -28,10 +28,8 @@ function MoviesCard({ movie }) {
   const navigate = useNavigate();
 
   return (
-    <div onClick={()=> navigate(`/movie/${movie.id}`)} className="movie-card">
-      <img alt={movie.title}
-        src={`${IMG_URL}w342${movie.poster_path}`}
-      />
+    <div onClick={() => navigate(`/movie/${movie.id}`)} className="movie-card">
+      <img alt={movie.title} src={`${IMG_URL}w342${movie.poster_path}`} />
       <div className="backdrop">
         <div className="title-and-release">
           <h2>{movie.title}</h2>
@@ -39,10 +37,10 @@ function MoviesCard({ movie }) {
         </div>
         <div className="rating-and-favorite">
           <h2>{formatRating(movie.vote_average)}</h2>
-          <FavoriteButton movie={movie}/>
+          <FavoriteButton movie={movie} />
           <button>☆</button>
         </div>
-      </div> 
+      </div>
     </div>
   );
 }
