@@ -69,12 +69,56 @@ function getPopularMovies() {
             }
             return response.json();
         })
-
         .catch ((error) => {
             console.error("Error fetching popular movies", error);
             throw error;
         });
-    }
+}
+
+function getUpcomingMovies() {
+    return fetch(`${BASE_URL}/movie/upcoming?api_key=${API_KEY}`)
+        .then((response) =>  {
+            if(!response.ok){
+                throw new Error("Failed to fetch upcoming movies");
+            }
+            return response.json();
+        })
+        .catch ((error) => {
+            console.error("Error fetching upcoming movies", error);
+            throw error;
+        });
+}
+
+function getTopRatedMovies() {
+    return fetch(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}`)
+        .then((response) =>  {
+            if(!response.ok){
+                throw new Error("Failed to fetch top rated movies");
+            }
+            return response.json();
+        })
+        .catch ((error) => {
+            console.error("Error fetching top rated movies", error);
+            throw error;
+        });
+}
+
+function getNowPlayingMovies() {
+    return fetch(`${BASE_URL}/movie/now_playing?api_key=${API_KEY}`)
+        .then((response) =>  {
+            if(!response.ok){
+                throw new Error("Failed to fetch now playing movies");
+            }
+            return response.json();
+        })
+        .catch ((error) => {
+            console.error("Error fetching now playing movies", error);
+            throw error;
+        });
+}
+
+   
 
 
-export { getPopularMovies};
+export { getPopularMovies, getUpcomingMovies, getTopRatedMovies, getNowPlayingMovies };
+
