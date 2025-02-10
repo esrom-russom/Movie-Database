@@ -1,6 +1,7 @@
 import React from "react";
 import "./PageMovie.css";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 const PageMovie = () => {
   return (
@@ -8,6 +9,8 @@ const PageMovie = () => {
       <h1>Movie</h1>
       {/* Add your favorite movies list here */}
 =======
+=======
+>>>>>>> Stashed changes
 import { useParams } from "react-router-dom";
 import { getMovieById } from "../utilities/api";
 import { useState, useEffect } from "react";
@@ -162,6 +165,9 @@ function PageMovie() {
   
         </div>
       </div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     </div>
   );
