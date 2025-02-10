@@ -1,39 +1,23 @@
-import React from "react";
-import "./PageMovie.css";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-const PageMovie = () => {
-  return (
-    <div className="page-movie">
-      <h1>Movie</h1>
-      {/* Add your favorite movies list here */}
-=======
-=======
->>>>>>> Stashed changes
 import { useParams } from "react-router-dom";
 import { getMovieById } from "../utilities/api";
 import { useState, useEffect } from "react";
 
-
 function PageMovie() {
-  const [movie,setMovie]= useState(null);
-  const{id} = useParams();
+  const [movie, setMovie] = useState(null);
+  const { id } = useParams();
 
-  useEffect(()=>{
+  useEffect(() => {
     getMovieById(id)
-    .then((movie)=> {
-      console.log('Movie data:', movie);
-      console.log('Cast data:', movie.credits?.cast);
-      setMovie(movie);
-    })
-    .catch((error) =>{
-      console.error('Error details:', error);
-      alert("Error fetching movie by Id");
-    });
-  },[id]);
-
-
+      .then((movie) => {
+        console.log("Movie data:", movie);
+        console.log("Cast data:", movie.credits?.cast);
+        setMovie(movie);
+      })
+      .catch((error) => {
+        console.error("Error details:", error);
+        alert("Error fetching movie by Id");
+      });
+  }, [id]);
 
   if (!movie) {
     return (
@@ -43,36 +27,44 @@ function PageMovie() {
     );
   }
 
-  const backdropPath = movie.backdrop_path 
+  const backdropPath = movie.backdrop_path
     ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
     : null;
   const posterPath = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : null;
-    
-  // Find the official trailer or use the first video
-  const trailer = movie.videos?.results?.find(
-    (video) => video.type === "Trailer" && video.site === "YouTube"
-  ) || movie.videos?.results?.[0];
 
-  // Get the top cast members (limit to 10)
+  const trailer =
+    movie.videos?.results?.find(
+      (video) => video.type === "Trailer" && video.site === "YouTube"
+    ) || movie.videos?.results?.[0];
+
   const cast = movie.credits?.cast?.slice(0, 10) || [];
-  
 
-
-  // Generate star rating
   const generateStarRating = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating / 2);
     const hasHalfStar = rating % 2 >= 0.5;
-    
+
     for (let i = 0; i < 5; i++) {
       if (i < fullStars) {
-        stars.push(<span key={i} className="star full">★</span>);
+        stars.push(
+          <span key={i} className="star full">
+            ★
+          </span>
+        );
       } else if (i === fullStars && hasHalfStar) {
-        stars.push(<span key={i} className="star half">★</span>);
+        stars.push(
+          <span key={i} className="star half">
+            ★
+          </span>
+        );
       } else {
-        stars.push(<span key={i} className="star empty">★</span>);
+        stars.push(
+          <span key={i} className="star empty">
+            ★
+          </span>
+        );
       }
     }
     return stars;
@@ -80,12 +72,17 @@ function PageMovie() {
 
   return (
     <div className="page-movie">
-      <div className="movie-banner" style={{ backgroundImage: `url(${backdropPath})` }}>
+      <div
+        className="movie-banner"
+        style={{ backgroundImage: `url(${backdropPath})` }}
+      >
         <div className="banner-overlay">
           <div className="movie-header">
             <h1>{movie.title}</h1>
             <div className="movie-meta">
-              <span className="release-date">{new Date(movie.release_date).toLocaleDateString()}</span>
+              <span className="release-date">
+                {new Date(movie.release_date).toLocaleDateString()}
+              </span>
             </div>
           </div>
         </div>
@@ -95,22 +92,22 @@ function PageMovie() {
         <div className="movie-poster">
           <img src={posterPath} alt={`${movie.title} poster`} />
         </div>
-        
+
         <div className="movie-details">
           <div className="overview">
             <h2>Overview</h2>
             <p>{movie.overview}</p>
           </div>
           <div className="rating-container">
-                <div className="star-rating">
-                  {generateStarRating(movie.vote_average)}
-                </div>
-                <span className="rating-number">
-                  {movie.vote_average.toFixed(1)}/10
-                </span>
-                <span className="vote-count">
-                  ({movie.vote_count.toLocaleString()} votes)
-                </span>
+            <div className="star-rating">
+              {generateStarRating(movie.vote_average)}
+            </div>
+            <span className="rating-number">
+              {movie.vote_average.toFixed(1)}/10
+            </span>
+            <span className="vote-count">
+              ({movie.vote_count.toLocaleString()} votes)
+            </span>
           </div>
           <div className="additional-info">
             <div className="info-item">
@@ -126,12 +123,11 @@ function PageMovie() {
             {movie.genres?.length > 0 && (
               <div className="info-item">
                 <span className="info-label">Genres:</span>
-                <span className="info-value">{movie.genres.map(genre => genre.name).join(', ')}</span>
+                <span className="info-value">
+                  {movie.genres.map((genre) => genre.name).join(", ")}
+                </span>
               </div>
             )}
-
-            
-            
           </div>
 
           {cast.length > 0 && (
@@ -161,16 +157,10 @@ function PageMovie() {
               </div>
             </div>
           )}
-
-  
         </div>
       </div>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     </div>
   );
-};
+}
 
 export default PageMovie;
