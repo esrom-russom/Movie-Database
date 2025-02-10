@@ -16,7 +16,6 @@ function PageMovie() {
       })
       .catch((error) => {
         console.error("Error details:", error);
-        alert("Error fetching movie by Id");
       });
   }, [id]);
 
