@@ -1,0 +1,286 @@
+.page-movie {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.page-movie.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader {
+  font-size: 1.5rem;
+  color: #e50914;
+}
+
+.movie-banner {
+  position: relative;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 26, 0.4) 0%,
+    rgba(26, 26, 26, 0.8) 60%,
+    #1a1a1a 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.movie-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.movie-header h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.movie-meta {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.1rem;
+}
+
+
+.star {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.star.full {
+  color: #ffd700;
+}
+
+.star.half {
+  position: relative;
+  color: #ffd700;
+  opacity: 0.7;
+}
+
+.star.empty {
+  color: #4a4a4a;
+}
+
+.rating-number {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.vote-count {
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+.movie-content {
+  max-width: 1200px;
+  margin: -100px auto 0;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.movie-poster {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movie-poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-details {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.overview h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #e50914;
+}
+
+.overview p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.additional-info {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.info-item {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #e50914;
+  min-width: 80px;
+}
+
+.info-value {
+  color: #cccccc;
+}
+
+.cast-section {
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.cast-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #e50914;
+}
+
+.cast-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.cast-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.cast-member:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.actor-image {
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+
+.actor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+
+.actor-character {
+  color: #cccccc;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .movie-content {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-poster {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .movie-header h1 {
+    font-size: 2rem;
+  }
+
+  .banner-overlay {
+    padding: 1rem;
+  }
+
+  .cast-list {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+    padding: 0.8rem;
+  }
+
+  .actor-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .actor-name {
+    font-size: 0.9rem;
+  }
+
+  .actor-character {
+    font-size: 0.8rem;
+  }
+
+  .companies-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .company-item {
+    padding: 0.8rem;
+  }
+
+  .company-logo {
+    height: 50px;
+  }
+
+  .company-name {
+    font-size: 0.8rem;
+  }
+}

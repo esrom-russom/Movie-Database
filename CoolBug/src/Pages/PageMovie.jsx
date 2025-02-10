@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { getMovieById } from "../utilities/api";
 import { useState, useEffect } from "react";
+import "./PageMovie.css";
 
 function PageMovie() {
   const [movie, setMovie] = useState(null);
