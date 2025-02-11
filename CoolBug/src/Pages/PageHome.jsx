@@ -1,27 +1,20 @@
-import React from "react";
-import "./PageHome.css";
+import React, { useState, useEffect } from "react";
 import { getPopularMovies } from "../utilities/api";
-import { useState, useEffect } from "react";
-import Movies from "../components/Movies"; // Adjust the path as necessary
+import MovieDisplay from "../components/MovieDisplay";
 
 function PageHome() {
   const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
     getPopularMovies()
-      .then((data) => {
-        console.log(data);
-        setPopularMovies(data.results);
-      })
-      .catch((error) => {
-        alert("Error fetching popular movies", error);
-      });
+      .then((data) => setPopularMovies(data.results))
+      .catch((error) => alert("Error fetching popular movies", error));
   }, []);
+
   return (
     <div>
       <h1>Home Page</h1>
-      {/* <Movies title="Popular Movies" movies={popularMovies} /> */}
-      <Movies title="Popular Movies" movies={popularMovies} />
+      <MovieDisplay movies={popularMovies} />
     </div>
   );
 }
