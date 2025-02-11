@@ -36,11 +36,11 @@ function PageFavorites() {
 
   return (
     <div>
-      <h1>Favorite Movies</h1>
+      <h1>Favorites</h1>
       {movieDetails.length > 0 ? (
         <MovieDisplay movies={movieDetails} isFavoritePage={true} />
       ) : (
-        <p>No favorite movies yet!</p>
+        <p>No favorites yet</p>
       )}
     </div>
   );
