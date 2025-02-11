@@ -7,11 +7,10 @@ function Movies({ title, movies }) {
       <h1>{title}</h1>
       {/* where we will map over the movies*/}
       <div className="movies-container">
-      {movies.map((movie)=>(
-        <MoviesCard key={movie.id} movie={movie} />))}
-
+        {movies.map((movie) => (
+          <MoviesCard key={movie.id} movie={movie} />
+        ))}
       </div>
-      
     </div>
   );
 }
