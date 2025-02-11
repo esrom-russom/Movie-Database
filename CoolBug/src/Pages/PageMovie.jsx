@@ -10,8 +10,10 @@ function PageMovie() {
   useEffect(() => {
     getMovieById(id)
       .then((movie) => {
-        console.log("Movie data:", movie);
-        console.log("Cast data:", movie.credits?.cast);
+        console.log("Full movie object:", movie);
+console.log("Credits object:", movie?.credits);
+console.log("Cast array:", movie?.credits?.cast);
+console.log("Cast length:", movie?.credits?.cast?.length);
         setMovie(movie);
       })
       .catch((error) => {
@@ -68,6 +70,9 @@ function PageMovie() {
       }
     }
     return stars;
+
+
+
   };
 
   return (
@@ -132,7 +137,7 @@ function PageMovie() {
 
           {cast.length > 0 && (
             <div className="cast-section">
-              <h2>Top Cast</h2>
+              <h2>Casts</h2>
               <div className="cast-list">
                 {cast.map((actor) => (
                   <div key={actor.id} className="cast-member">

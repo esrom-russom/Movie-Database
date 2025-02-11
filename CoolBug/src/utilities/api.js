@@ -4,12 +4,17 @@ const BASE_URL = "https://api.themoviedb.org/3";
 
 
 function getMovieById(id) {
-    return fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`)
+    return fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=credits,videos`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
             return response.json();
+        })
+        .then((movie) => {
+            console.log("Fetched movie data:", movie);  // Debugging log
+            console.log("Credits data:", movie.credits); // Check if credits exist
+            return movie;
         })
         .catch((error) => {
             console.error("Error fetching movie by ID:", error);
