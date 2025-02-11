@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PageHome from "./pages/PageHome";
-import PageMovie from "./pages/PageMovie";
-import PageFavorites from "./pages/PageFavorites";
+import PageHome from "./Pages/PageHome";
+import PageMovie from "./Pages/PageMovie";
+import PageFavorites from "./Pages/PageFavorites";
 
 function App() {
   return (
