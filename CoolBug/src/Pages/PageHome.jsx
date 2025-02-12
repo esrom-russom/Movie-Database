@@ -8,10 +8,11 @@ import {
 } from "../utilities/api";
 import { useState, useEffect } from "react";
 import Movies from "../components/Movies"; // Adjust the path as necessary
-import SimpleSlider from "../components/SimpleSlider"; // Adjust the path as necessary
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { use } from "react";
+import MovieSlider from "../components/MovieSlider"; // Adjust the path as necessary
+import Slider from "react-slick";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+// Adjust the path as necessary
 
 function PageHome() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -26,10 +27,9 @@ function PageHome() {
         setPopularMovies(data.results);
       })
       .catch((error) => {
-        alert("Error fetching popular movies", error);
+        alert("Error fetching Popular movies", error);
       });
   }, []);
-
   useEffect(() => {
     getUpcomingMovies()
       .then((data) => {
@@ -40,7 +40,6 @@ function PageHome() {
         alert("Error fetching Upcoming movies", error);
       });
   }, []);
-
   useEffect(() => {
     getTopRatedMovies()
       .then((data) => {
@@ -51,7 +50,6 @@ function PageHome() {
         alert("Error fetching Top Rated movies", error);
       });
   }, []);
-
   useEffect(() => {
     getNowPlayingMovies()
       .then((data) => {
@@ -64,18 +62,18 @@ function PageHome() {
   }, []);
 
   return (
-    <div>
-      <h1>Home Page</h1>
-      {/* <h2>Popular Movies</h2> */}
-      <SimpleSlider movies={popularMovies} />
-      <Movies title="Popular Movies" movies={popularMovies} />
-      <Movies title="Upcoming Movies" movies={upcomingMovies} />
-      {/* <h2>Top Rated Movies</h2> */}
-      <Movies title="Top Rated Movies" movies={topRatedMovies} />
-      {/* <h2>Now Playing Movies</h2> */}
-      <Movies title="Now Playing Movies" movies={nowPlayingMovies} />
+    <div className="page-home">
+      <div className="slider-container">
+        <Slider>
+          <div className="movies-section">
+            <Movies title="Popular Movies" movies={popularMovies} />
+            <Movies title="Upcoming Movies" movies={upcomingMovies} />
+            <Movies title="Top Rated Movies" movies={topRatedMovies} />
+            <Movies title="Now Playing Movies" movies={nowPlayingMovies} />
+          </div>
+        </Slider>
+      </div>
     </div>
   );
 }
-
 export default PageHome;

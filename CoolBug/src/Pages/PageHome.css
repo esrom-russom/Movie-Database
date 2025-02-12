@@ -1,0 +1,49 @@
+ .page-home {
+    
+    padding: 40px;
+    /* width: 100%; */
+  }
+  
+  .slider-container {
+    margin-bottom: 40px;
+ 
+  }
+  
+  .movies-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+.movie-cards {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.movie-cards::before,
+.movie-cards::after {
+    content: '';
+    display: block;
+    width: 40px; /* Adjust based on arrow size */
+}
+
+.movie-cards-wrapper {
+    position: relative;
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
+  
+  .movies-section > div::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .movies-section h2 {
+    margin-bottom: 20px;
+  } 

@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+  }
+  
+  .nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .nav-links ul li a:hover {
+    color: #ff6600;
+  }
+  
+  /* Hide nav-links and show hamburger on mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+  

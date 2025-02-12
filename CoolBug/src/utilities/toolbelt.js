@@ -11,4 +11,4 @@ function formatReleaseDate(date){
 function formatRating(rating){
     return rating.toFixed(1);
 }
-export {formatReleaseDate, formatRating};
+export {formatReleaseDate, formatRating};''

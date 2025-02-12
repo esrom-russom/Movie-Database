@@ -1,0 +1,40 @@
+.bm-burger-button {
+    
+    display: block;
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 20px;
+    top: 20px;
+}
+
+.bm-burger-bars {
+    background: #373a47;
+}
+
+.bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #b8b7ad;
+    display: block;
+    padding: 0.5em 0;
+    transition: color 0.3s;
+}
+
+.menu-item:hover {
+    color: #fff;
+}
+
+@media (min-width: 600px) {
+    .bm-burger-button {
+        
+    display: none;
+    
+    }
+}
+  
