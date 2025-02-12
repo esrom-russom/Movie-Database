@@ -10,7 +10,9 @@
   align-items: center;
   border-radius: 9px;
   backdrop-filter: blur(20px); 
-}
+   
+ }
+
 
 .header::before, .header::after {
   content: "";
