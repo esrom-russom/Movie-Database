@@ -1,10 +1,8 @@
-import { createContext } from "react";
-import { useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 const GlobalContext = createContext();
 
 function GlobalProvider({ children }) {
-  //store movie data objects
   const [favorites, setFavorites] = useState(loadFavsFromLocalStorage());
 
   useEffect(() => {
@@ -12,11 +10,16 @@ function GlobalProvider({ children }) {
   }, [favorites]);
 
   function loadFavsFromLocalStorage() {
-    const favs = localStorage.getItem("favorites");
-    if (favs) {
-      return JSON.parse(favs);
-    } else {
-      return [];
+    try {
+      // Add a try-catch block
+      const favs = localStorage.getItem("favorites");
+      if (favs) {
+        return JSON.parse(favs);
+      }
+      return; // Return empty array if no favorites in storage
+    } catch (error) {
+      console.error("Error loading favorites from local storage:", error);
+      return; // Return empty array in case of error
     }
   }
 
@@ -25,7 +28,7 @@ function GlobalProvider({ children }) {
   }
 
   function removeFavorite(movie) {
-    setFavorites([favorites.filter((fav) => fav.id !== movie.id)]);
+    setFavorites(favorites.filter((fav) => fav.id !== movie.id));
   }
 
   return (
@@ -34,4 +37,5 @@ function GlobalProvider({ children }) {
     </GlobalContext.Provider>
   );
 }
+
 export { GlobalContext, GlobalProvider };

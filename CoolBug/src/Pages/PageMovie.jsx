@@ -1,50 +1,62 @@
 import { useParams } from "react-router-dom";
-import { getMovieById } from "../utilities/api";
+import { getMovieById, getImageUrl } from "../utilities/api";
 import { useState, useEffect } from "react";
 import "./PageMovie.css";
 
 function PageMovie() {
   const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
-    getMovieById(id)
-      .then((movie) => {
-        console.log("Full movie object:", movie);
-        console.log("Credits object:", movie?.credits);
-        console.log("Cast array:", movie?.credits?.cast);
-        console.log("Cast length:", movie?.credits?.cast?.length);
-        setMovie(movie);
-      })
-      .catch((error) => {
-        console.error("Error details:", error);
-      });
+    async function fetchMovieData() {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const movieData = await getMovieById(id);
+        setMovie(movieData);
+      } catch (err) {
+        console.error("Error fetching movie:", err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchMovieData();
   }, [id]);
 
+  if (loading) {
+    return <div className="page-movie loading">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="page-movie error">Error: {error.message}</div>;
+  }
+
   if (!movie) {
-    return (
-      <div className="page-movie loading">
-        <div className="loader">Loading...</div>
-      </div>
-    );
+    return <div className="page-movie">Movie not found.</div>;
   }
 
   const backdropPath = movie.backdrop_path
-    ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
+    ? getImageUrl(movie.backdrop_path, "original")
     : null;
-  const posterPath = movie.poster_path
-    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+  const posterPath = movie.poster_path ? getImageUrl(movie.poster_path) : null;
+
+  const trailer = movie.videos?.results?.find(
+    (video) => video.type === "Trailer" && video.site === "YouTube"
+  );
+  const trailerUrl = trailer
+    ? `https://www.youtube.com/embed/${trailer.key}`
     : null;
 
-  const trailer =
-    movie.videos?.results?.find(
-      (video) => video.type === "Trailer" && video.site === "YouTube"
-    ) || movie.videos?.results?.[0];
-
+  // Corrected: provide default empty array
   const cast = movie.credits?.cast?.slice(0, 10) || [];
 
   const generateStarRating = (rating) => {
-    const stars = [];
+    const stars = []; // Initialize stars as an empty array
     const fullStars = Math.floor(rating / 2);
     const hasHalfStar = rating % 2 >= 0.5;
 
@@ -69,6 +81,7 @@ function PageMovie() {
         );
       }
     }
+
     return stars;
   };
 
@@ -92,7 +105,11 @@ function PageMovie() {
 
       <div className="movie-content">
         <div className="movie-poster">
-          <img src={posterPath} alt={`${movie.title} poster`} />
+          <img
+            src={posterPath}
+            alt={`${movie.title} poster`}
+            onError={(e) => (e.target.src = "/placeholder.jpg")}
+          />
         </div>
 
         <div className="movie-details">
@@ -100,6 +117,7 @@ function PageMovie() {
             <h2>Overview</h2>
             <p>{movie.overview}</p>
           </div>
+
           <div className="rating-container">
             <div className="star-rating">
               {generateStarRating(movie.vote_average)}
@@ -111,6 +129,7 @@ function PageMovie() {
               ({movie.vote_count.toLocaleString()} votes)
             </span>
           </div>
+
           <div className="additional-info">
             <div className="info-item">
               <span className="info-label">Status:</span>
@@ -141,8 +160,11 @@ function PageMovie() {
                     <div className="actor-image">
                       {actor.profile_path ? (
                         <img
-                          src={`https://image.tmdb.org/t/p/w185${actor.profile_path}`}
+                          src={getImageUrl(actor.profile_path, "w185")}
                           alt={actor.name}
+                          onError={(e) =>
+                            (e.target.src = "/actor_placeholder.jpg")
+                          }
                         />
                       ) : (
                         <div className="actor-placeholder">
@@ -159,6 +181,21 @@ function PageMovie() {
               </div>
             </div>
           )}
+
+          {trailerUrl && (
+            <div className="trailer-section">
+              <h2>Trailer</h2>
+              <iframe
+                title="Movie Trailer"
+                width="560"
+                height="315"
+                src={trailerUrl}
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
+          {!trailerUrl && <p>No trailer available.</p>}
         </div>
       </div>
     </div>
