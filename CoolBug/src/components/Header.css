@@ -1,0 +1,70 @@
+.header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; 
+  margin: 20px 40px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 9px;
+  backdrop-filter: blur(20px); 
+   
+ }
+
+
+.header::before, .header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Ensure these layers stay behind the content */
+  border-radius: 9px;
+}
+
+.header::before {
+  background-color: #000000;
+  opacity: 0.2; /* 20% transparency */
+}
+
+.header::after {
+  background-color: #FFFFFF;
+  opacity: 0.05; /* 5% transparency */
+}
+
+.logo {
+  font-size: 2rem;
+  color: #fff;  /* Ensure the logo is white */
+  font-weight: bold;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+  
+  
+  
+  /* Hide nav-links and show hamburger on mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+  

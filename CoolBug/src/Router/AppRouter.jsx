@@ -5,12 +5,12 @@ import PageHome from "../Pages/PageHome";
 import PageAbout from "../Pages/PageAbout";
 import PageFavorites from "../Pages/PageFavorites";
 import PageMovie from "../Pages/PageMovie";
-import {GlobalProvider} from "../context/GlobalContext";
+import { GlobalProvider } from "../context/GlobalContext";
 
 function AppRouter() {
   return (
     <BrowserRouter>
-    <GlobalProvider>
+      <GlobalProvider>
         <Header />
         <Routes>
           <Route path="/" element={<PageHome />} />

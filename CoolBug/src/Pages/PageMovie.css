@@ -1,7 +1,21 @@
 .page-movie {
-  min-height: 100vh;
-  background-color: #1a1a1a;
-  color: #ffffff;
+  position: relative;
+  padding: 40px;
+  background-color: #111111; /* Solid background for the page */
+  width: 100%; /* Ensures the page takes up full width */
+  max-width: 100vw; /* Prevents any horizontal overflow */
+  box-sizing: border-box; /* Ensures padding does not affect the width */
+}
+
+.page-movie::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15rem; /* Fixed height of the gradient */
+  background: linear-gradient(to bottom, rgba(18, 17, 17, 1), rgba(18, 17, 17, 0)); /* Black gradient from top to bottom */
+  z-index: 1; /* Ensure it's behind the content */
 }
 
 .page-movie.loading {
@@ -19,6 +33,7 @@
 .movie-banner {
   position: relative;
   height: 60vh;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -42,7 +57,6 @@
 }
 
 .movie-header {
-  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
@@ -59,7 +73,6 @@
   gap: 2rem;
   font-size: 1.1rem;
 }
-
 
 .star {
   font-size: 1.2rem;
@@ -91,7 +104,6 @@
 }
 
 .movie-content {
-  max-width: 1200px;
   margin: -100px auto 0;
   padding: 0 2rem;
   display: grid;
@@ -99,6 +111,8 @@
   gap: 2rem;
   position: relative;
   z-index: 1;
+  width: 100%; /* Allow it to take up the full width */
+  max-width: none; /* Remove the max-width limitation */
 }
 
 .movie-poster {
@@ -226,9 +240,6 @@
   font-size: 0.9rem;
   opacity: 0.8;
 }
-
-
-
 
 @media (max-width: 768px) {
   .movie-content {

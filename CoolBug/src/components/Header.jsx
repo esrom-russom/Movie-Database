@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import HamburgerMenu from "../components/react-burger-menu"; // Ensure the import matches the file name
 import "./Header.css";
-import { APP_TITLE } from "../globals/globals";
-function Header() {
+
+const Header = () => {
   return (
-    <header>
-      <h1>{APP_TITLE}</h1>
-      <nav>
+    <header className="header">
+      <HamburgerMenu />
+      <h1 className="logo">MovieDB</h1>
+      <nav className="nav-links">
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -19,8 +21,9 @@ function Header() {
           </li>
         </ul>
       </nav>
+      {/* <HamburgerMenu /> */}
     </header>
   );
-}
+};
 
 export default Header;

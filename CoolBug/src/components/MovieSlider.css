@@ -1,0 +1,19 @@
+.simple-slider-container {
+    margin: 20px 0;
+  }
+  
+  .slider-container {
+    padding: 2px;
+  }
+  
+  .slider-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .slider-container h3 {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
