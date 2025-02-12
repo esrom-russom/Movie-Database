@@ -1,49 +1,58 @@
- .page-home {
-    
-    padding: 40px;
-    /* width: 100%; */
-  }
-  
-  .slider-container {
-    margin-bottom: 40px;
- 
-  }
-  
-  .movies-section {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-  
+.page-home {
+  position: relative;
+  padding: 40px;
+  background-color: #111111; /* Solid background for the page */
+}
+
+.page-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20rem; /* Fixed height of the gradient */
+  background: linear-gradient(to bottom, rgba(18, 17, 17, 1), rgba(18, 17, 17, 0)); /* Black gradient from top to bottom */
+  z-index: -1; /* Ensure it's behind the content */
+}
+.slider-container {
+  margin-bottom: 40px;
+}
+
+.movies-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .movie-cards {
-    display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .movie-cards::before,
 .movie-cards::after {
-    content: '';
-    display: block;
-    width: 40px; /* Adjust based on arrow size */
+  content: '';
+  display: block;
+  width: 40px; /* Adjust based on arrow size */
 }
 
 .movie-cards-wrapper {
-    position: relative;
+  position: relative;
 }
 
 .arrow-left {
-    left: 0;
+  left: 0;
 }
 
 .arrow-right {
-    right: 0;
+  right: 0;
 }
-  
-  .movies-section > div::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .movies-section h2 {
-    margin-bottom: 20px;
-  } 
+
+.movies-section > div::-webkit-scrollbar {
+  display: none;
+}
+
+.movies-section h2 {
+  margin-bottom: 20px;
+}
