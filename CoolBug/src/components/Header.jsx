@@ -7,12 +7,14 @@ const Header = () => {
   return (
     <header className="header">
       <HamburgerMenu />
-      <h1 className="logo">MovieDB</h1>
+      <h1 className="logo">
+        <Link to="/">MovieDB</Link>
+      </h1>
       <nav className="nav-links">
         <ul>
-          <li>
+          {/* <li>
             <Link to="/">Home</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/favorites">Favorites</Link>
           </li>

@@ -21,13 +21,14 @@
 .movies-section {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  /* gap: 3rem; */
 }
 
 .movie-cards {
   display: flex;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  gap: 40px;
 }
 
 .movie-cards::before,

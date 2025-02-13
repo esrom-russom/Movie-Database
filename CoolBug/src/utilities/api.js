@@ -65,6 +65,19 @@ export { getMovieById };
 //     ]
 //   }
 // }
+// function getMovieImages() {
+//     return fetch(`${BASE_URL}/configuration?api_key=${API_KEY}`)
+//         .then((response) => {
+//             if (!response.ok) {
+//                 throw new Error("Failed to fetch movie images");
+//             }
+//             return response.json();
+//         })
+//         .catch((error) => {
+//             console.error("Error fetching movie images", error);
+//             throw error;
+//         }); 
+// }
 
 function getPopularMovies() {
     return fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`)
@@ -125,5 +138,5 @@ function getNowPlayingMovies() {
    
 
 
-export { getPopularMovies, getUpcomingMovies, getTopRatedMovies, getNowPlayingMovies };
+export { getPopularMovies, getUpcomingMovies, getTopRatedMovies, getNowPlayingMovies,};
 

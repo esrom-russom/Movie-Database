@@ -11,11 +11,11 @@ import Movies from "../components/Movies"; // Adjust the path as necessary
 import MovieSlider from "../components/MovieSlider";
 // import Responsive from "../components/MovieSlider"; // Adjust the path as necessary
 import Slider from "react-slick";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 // Adjust the path as necessary
 
 function PageHome() {
+  // const [movieImages, setMovieImages] = useState({});
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
