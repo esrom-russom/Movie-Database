@@ -18,13 +18,24 @@
     margin-top: 10px;
   }
   .slick-dots {
-    background-color: #cdd1ff;
     border-radius: 35rem;
   }
 
-  .slick-dots:hover {
-    background-color: rgba(225, 230, 255, 0.7);
+  
+  .slick-dots li button {
+   color: #fff;  
+    
   }
+  
+  .slick-dots li button:hover {
+   color: #fff;
+  
+  }
+  .slick-dots li button:before {
+    color:#fff;
+  }
+  
+
   /* .simple-slider-container{
     width: 100%;
   } */
