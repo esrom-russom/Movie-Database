@@ -1,4 +1,5 @@
 .simple-slider-container {
+
     margin: 20px 0;
   }
   
@@ -16,4 +17,14 @@
     text-align: center;
     margin-top: 10px;
   }
-  
+  .slick-dots {
+    background-color: rgb(82, 102, 203);
+    border-radius: 2rem;
+  }
+
+  .slick-dots:hover {
+    background-color: rgba(82, 102, 203, 0.7);
+  }
+  /* .simple-slider-container{
+    width: 100%;
+  } */

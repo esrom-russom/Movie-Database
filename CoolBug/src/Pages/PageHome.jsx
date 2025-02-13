@@ -8,7 +8,8 @@ import {
 } from "../utilities/api";
 import { useState, useEffect } from "react";
 import Movies from "../components/Movies"; // Adjust the path as necessary
-import MovieSlider from "../components/MovieSlider"; // Adjust the path as necessary
+import MovieSlider from "../components/MovieSlider";
+// import Responsive from "../components/MovieSlider"; // Adjust the path as necessary
 import Slider from "react-slick";
 import Header from "../components/Header";
 import Footer from "../components/Footer";

@@ -56,3 +56,21 @@
 .movies-section h2 {
   margin-bottom: 20px;
 }
+@media (max-width: 768px) {
+    .movie-cards {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .movie-cards > div {
+        flex: 0 0 auto;
+        width: 100%; /* Adjust width for mobile view */
+    }
+}
+
+@media (min-width: 769px) {
+    .movie-cards > div {
+        flex: 1 1 auto;
+        width: 100%; /* Full display for desktop view */
+    }
+}
