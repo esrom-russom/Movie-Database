@@ -20,6 +20,7 @@ function PageHome() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     getPopularMovies()
@@ -62,10 +63,19 @@ function PageHome() {
       });
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="page-home">
       <div className="slider-container">
-        <Slider>
+        <Slider key={windowWidth}>
           <div className="movies-section">
             <Movies title="Popular Movies" movies={popularMovies} />
             <Movies title="Upcoming Movies" movies={upcomingMovies} />
