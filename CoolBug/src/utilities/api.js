@@ -1,4 +1,4 @@
-
+// api.js
 const API_KEY = import.meta.env.VITE_COOL_BUG;
 const BASE_URL = "https://api.themoviedb.org/3";
 

@@ -1,6 +1,5 @@
 import "./Movies.css";
 import MovieSlider from "./MovieSlider"; // Import the slider component
-
 function Movies({ title, movies }) {
   return (
     <div className="movies">
@@ -10,5 +9,4 @@ function Movies({ title, movies }) {
     </div>
   );
 }
-
 export default Movies;
