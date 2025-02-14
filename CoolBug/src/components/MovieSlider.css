@@ -19,6 +19,7 @@
   }
   .slick-dots {
     border-radius: 35rem;
+    margin-top: 4rem;
   }
 
   
@@ -33,6 +34,16 @@
   }
   .slick-dots li button:before {
     color:#fff;
+  }
+  .slick-dots {
+    margin-top: 20px; /* Default value for larger screens */
+  }
+  
+  /* Adjust for mobile view */
+  @media (max-width: 768px) {
+    .slick-dots {
+      margin-top: 4rem;
+    }
   }
   
 
