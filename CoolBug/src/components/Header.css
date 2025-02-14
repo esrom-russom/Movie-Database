@@ -1,50 +1,62 @@
 .header {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10; 
-  margin: 20px 40px; 
+  z-index: 10;
+  margin: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 9px;
-  backdrop-filter: blur(20px); 
-   
- }
-
-
-.header::before, .header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1; /* Ensure these layers stay behind the content */
-  border-radius: 9px;
+  backdrop-filter: blur(20px);
+  padding: 10px 20px; /* Add padding for spacing */
 }
 
-.header::before {
-  background-color: #000000;
-  opacity: 0.2; /* 20% transparency */
+/* Ensures logo stays at the left */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1; /* Makes it take up the left space */
 }
 
-.header::after {
-  background-color: #FFFFFF;
-  opacity: 0.05; /* 5% transparency */
+.logo-container a {
+  display: flex;
+  align-items: center;
 }
 
-.logo {
-  font-size: 2rem;
-  color: #fff;  /* Ensure the logo is white */
-  font-weight: bold;
+.logo-img {
+  height: 40px; /* Adjust size as needed */
+  width: auto;
 }
+
+.nav-links {
+  flex-shrink: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+.nav-icon {
+  width: 20px; /* Adjust as needed */
+  height: 20px;
+}
+
 
 .nav-links ul {
   display: flex;
   list-style: none;
   gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline-block;
 }
 
 .nav-links a {
@@ -57,8 +69,6 @@
   text-decoration: underline;
 }
 
-
-  
   
   
   /* Hide nav-links and show hamburger on mobile */
