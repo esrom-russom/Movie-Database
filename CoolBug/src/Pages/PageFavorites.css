@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    padding: 40px;
+    padding-top: 80px;
     background-color: #111111;
 }
 
@@ -13,5 +13,18 @@
     gap: 20px;
     max-width: 1200px;
     justify-items: center;
-    margin-top: 40px;
+    margin-top: 0; 
+    margin-bottom: 0; 
+    margin-left: 40px;
+    margin-right: 40px;
 }
+
+.page-favorites h1 {
+    align-self: flex-start;
+}
+
+.movies-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
