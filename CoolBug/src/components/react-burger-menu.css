@@ -1,21 +1,20 @@
 .bm-burger-button {
-    
     display: block;
     position: fixed;
     width: 36px;
-    height: 30px;
     left: 20px;
     top: 20px;
 }
 
 .bm-burger-bars {
-    background: #111111;
+    background: #333333; /* Change to desired color */
 }
 
 .bm-menu {
-    background: #111111;
+    background: #333333; /* Change to desired color */
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
+    height: 100%; /* Change to 100% to display all contents */
 }
 
 .menu-item {
@@ -32,9 +31,13 @@
 
 @media (min-width: 600px) {
     .bm-burger-button {
-        
-    display: none;
-    
+        display: none;
+    }
+    .hamburger-icon {
+        display: none;
     }
 }
-  
+
+.react-burger-cross-btn {
+    color: aliceblue;
+}

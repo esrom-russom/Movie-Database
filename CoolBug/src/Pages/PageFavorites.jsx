@@ -13,10 +13,10 @@ function PageFavorites() {
         <p>No favorites yet.</p>
       ) : (
         <div className="favorites-grid">
-  {favorites.map((movie) =>
-    movie.id ? <MoviesCard key={movie.id} movie={movie} /> : null
-  )}
-</div>
+          {favorites.map((movie) =>
+            movie.id ? <MoviesCard key={movie.id} movie={movie} /> : null
+          )}
+        </div>
       )}
     </div>
   );
