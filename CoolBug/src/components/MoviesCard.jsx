@@ -21,7 +21,7 @@ function MoviesCard({ movie }) {
       <div className="backdrop">
         <div className="title-and-release">
           <h2>{movie.title}</h2>
-          <p>{formatReleaseDate(movie.release_date)}</p>
+          {/* <p>{formatReleaseDate(movie.release_date)}</p> */}
         </div>
         <div className="rating-and-favorite">
           <h2>{formatRating(movie.vote_average)}</h2>
