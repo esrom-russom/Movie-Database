@@ -1,22 +1,42 @@
 .favorite-button {
-    background-color: #ffcc00;
+    background: none;
     border: none;
-    border-radius: 50%;
-    color: white;
     cursor: pointer;
-    font-size: 16px;
-    height: 40px;
-    width: 40px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    position: relative;
+    transition: transform 0.2s ease;
 }
 
-.favorite-button:hover {
-    background-color: #ff9900;
+/* Add glow effect and color change when favorited */
+.favorited .favorite-icon {
+    filter: invert(32%) sepia(100%) saturate(279%) hue-rotate(20deg) brightness(103%) contrast(110%);
+    animation: glow 1.5s ease-in-out infinite alternate; /* Glow effect */
 }
 
-.favorite-button:active {
-    background-color: #cc7a00;
+/* Glowing effect for favorited icon */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 18px rgba(255, 0, 0, 0.7);
+    }
+}
+
+/* Prevent borders and focus outlines on the icon */
+.favorite-icon {
+    border: none;
+    outline: none;
+}
+
+/* Styling for "Remove Favorite" text */
+.favorite-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;
+    margin-left: 8px; /* Space between icon and text */
 }
