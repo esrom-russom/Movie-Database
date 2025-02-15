@@ -13,7 +13,7 @@
     border: none;
     cursor: pointer;
     position: fixed;
-    left: 8rem;
+    left: 85%;
     top: 0.5rem;
     z-index: 1000;
 }
