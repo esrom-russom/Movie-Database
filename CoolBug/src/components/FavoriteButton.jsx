@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 function FavoriteButton({ movie }) {
@@ -17,7 +17,7 @@ function FavoriteButton({ movie }) {
 
   return (
     <button onClick={handleClick}>
-      {isFavorite ? "💘" : "Add to Favorites"}
+      {isFavorite ? "Remove from Favorites" : "💘"}
     </button>
   );
 }
