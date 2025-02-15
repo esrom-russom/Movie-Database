@@ -1,0 +1,80 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 9px;
+  backdrop-filter: blur(20px);
+  padding: 10px 20px; /* Add padding for spacing */
+}
+
+/* Ensures logo stays at the left */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1; /* Makes it take up the left space */
+}
+
+.logo-container a {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px; /* Adjust size as needed */
+  width: auto;
+}
+
+.nav-links {
+  flex-shrink: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+.nav-icon {
+  width: 20px; /* Adjust as needed */
+  height: 20px;
+}
+
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+  
+  
+  /* Hide nav-links and show hamburger on mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+  

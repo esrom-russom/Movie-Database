@@ -1,0 +1,80 @@
+/* Burger icon styles */
+.bm-burger-button {
+    display: block;
+    position: fixed;
+    width: 36px;
+    left: 20px;
+    top: 20px;
+}
+
+/* Hamburger icon button */
+.hamburger-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    left: 85%;
+    top: 0.5rem;
+    z-index: 1000;
+}
+
+.hamburger-icon img {
+    width: 36px;
+    height: auto;
+}
+
+/* Hide the hamburger icon on larger screens */
+@media (min-width: 768px) {
+    .bm-burger-button,
+    .hamburger-icon {
+        display: none;
+    }
+}
+
+/* Burger bars styling */
+.bm-burger-bars {
+    background: #333333;
+}
+
+/* Menu container styling */
+.bm-menu {
+    background: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px; /* Fixed width for the menu */
+    /* max-height: 100vh; Prevent scrolling by ensuring it doesn't exceed the screen height */
+    height: 0; /* Allow the menu to grow */
+    padding: 20px;
+    font-size: 1.15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 999;
+    transition: none; /* Disable transition for smooth opening */
+    overflow: hidden; /* Prevent scrolling */
+    .react-burger-cross-btn {
+        color: aliceblue;
+    }
+    
+}
+
+/* Menu item styles */
+.menu-item {
+    text-decoration: none;
+    color: #b8b7ad;
+    display: block;
+    padding: 0.5em 0;
+    transition: color 0.3s;
+}
+
+.menu-item:hover {
+    color: #fff;
+}
+
+/* Close button for burger menu */
+
+/* Ensure menu is visible when open */
+.bm-menu-wrap {
+    position: static; /* Keep the menu visible without sliding */
+}
