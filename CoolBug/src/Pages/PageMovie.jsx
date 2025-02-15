@@ -183,17 +183,15 @@ function PageMovie() {
           )}
 
           {trailerUrl && (
-            <div className="trailer-section">
-              <h2>Trailer</h2>
-              <iframe
-                title="Movie Trailer"
-                width="560"
-                height="315"
-                src={trailerUrl}
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
+           <div className="trailer-section">
+           <h2>Trailer</h2>
+           <iframe
+             title="Movie Trailer"
+             src={trailerUrl}
+             frameBorder="0"
+             allowFullScreen
+           ></iframe>
+         </div>
           )}
           {!trailerUrl && <p>No trailer available.</p>}
         </div>
