@@ -11,15 +11,14 @@ function GlobalProvider({ children }) {
 
   function loadFavsFromLocalStorage() {
     try {
-      // Add a try-catch block
       const favs = localStorage.getItem("favorites");
       if (favs) {
         return JSON.parse(favs);
       }
-      return; // Return empty array if no favorites in storage
+      return;
     } catch (error) {
       console.error("Error loading favorites from local storage:", error);
-      return; // Return empty array in case of error
+      return;
     }
   }
 
