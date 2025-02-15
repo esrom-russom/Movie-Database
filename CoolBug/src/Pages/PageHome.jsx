@@ -9,8 +9,6 @@ import {
 import { useState, useEffect } from "react";
 import Movies from "../components/Movies";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 function PageHome() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -63,6 +61,8 @@ function PageHome() {
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
+      // the innerWidth is a property with in the reacct slider that is used to get the width of the window
+      // i added it because i was having problem with resixing the slider and movies but with this it worked fine
     };
 
     window.addEventListener("resize", handleResize);
