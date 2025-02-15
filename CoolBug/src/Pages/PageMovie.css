@@ -1,6 +1,7 @@
 .page-movie {
   position: relative;
-  padding: 40px;/* Solid background for the page */
+  padding: 40px;
+  background-color: #111111; /* Solid background for the page */
   width: 100%; /* Ensures the page takes up full width */
   max-width: 100vw; /* Prevents any horizontal overflow */
   box-sizing: border-box; /* Ensures padding does not affect the width */

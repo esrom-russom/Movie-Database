@@ -5,7 +5,7 @@
     padding: 20px;
     background: rgba(0, 0, 0, 0.8); /* Transparent background */
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(255, 213, 213, 0.3);
     color: #fff;
     text-align: center;
     overflow: hidden;
@@ -26,13 +26,13 @@
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
-  .about-content ol {
+  .about-content ul{
     list-style: decimal;
     padding-left: 20px;
     text-align: left;
   }
   
-  .about-content ol li {
+  .about-content ul li {
     font-size: 1.1rem;
     margin-bottom: 10px;
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
@@ -50,7 +50,7 @@
     }
     
     .about-content p,
-    .about-content ol li {
+    .about-content ul li {
       font-size: 1rem;
     }
   }
