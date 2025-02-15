@@ -7,15 +7,10 @@ import {
   getNowPlayingMovies,
 } from "../utilities/api";
 import { useState, useEffect } from "react";
-import Movies from "../components/Movies"; // Adjust the path as necessary
-import MovieSlider from "../components/MovieSlider";
-// import Responsive from "../components/MovieSlider"; // Adjust the path as necessary
+import Movies from "../components/Movies";
 import Slider from "react-slick";
 
-// Adjust the path as necessary
-
 function PageHome() {
-  // const [movieImages, setMovieImages] = useState({});
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
@@ -66,6 +61,8 @@ function PageHome() {
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
+      // the innerWidth is a property with in the reacct slider that is used to get the width of the window
+      // i added it because i was having problem with resixing the slider and movies but with this it worked fine
     };
 
     window.addEventListener("resize", handleResize);
@@ -75,6 +72,8 @@ function PageHome() {
   return (
     <div className="page-home">
       <div className="slider-container">
+        {/* hey randy this is was the fetching problems i was having without the slider it was working fine but 
+        once i got the slider function working it somehow started feching it more than once- just wanna give you a heads up*/}
         <Slider key={windowWidth}>
           <div className="movies-section">
             <Movies title="Popular Movies" movies={popularMovies} />
