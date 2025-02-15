@@ -15,7 +15,7 @@ const PageAbout = () => {
           Powered by the extensive <span>TMDB database</span>, we bring you an
           unmatched collection of films, including:
         </p>
-        <ol>
+        <ul>
           <li>
             <strong>Popular Hits</strong> – Stay updated with what’s trending
             worldwide.
@@ -32,7 +32,7 @@ const PageAbout = () => {
             <strong>Top-Rated Films</strong> – Dive into critically acclaimed
             masterpieces loved by audiences.
           </li>
-        </ol>
+        </ul>
       </div>
     </div>
   );
