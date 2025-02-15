@@ -15,11 +15,11 @@ const MovieSlider = ({ title, movies }) => {
     responsive: [
       {
         breakpoint: 480,
-        settings: { slidesToShow: 1, slidesToScroll: 1 },
+        settings: { slidesToShow: 1, slidesToScroll: 5 },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 2, slidesToScroll: 1 },
+        settings: { slidesToShow: 2, slidesToScroll: 2 },
       },
       {
         breakpoint: 1024,
