@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import MoviesCard from "../components/MoviesCard";
-import "./PageFavorites.css";
+import "./PageFavorites.css"; // Make sure this path is correct
 
 function PageFavorites() {
   const { favorites } = useContext(GlobalContext);
@@ -9,15 +9,17 @@ function PageFavorites() {
   return (
     <div className="page-favorites">
       <h1>Favorites</h1>
-      {favorites.length === 0 ? (
-        <p>No favorites yet.</p>
-      ) : (
+      <div className="favorites-grid-wrapper">
         <div className="favorites-grid">
-          {favorites.map((movie) =>
-            movie.id ? <MoviesCard key={movie.id} movie={movie} /> : null
+          {favorites.length === 0 ? (
+            <div className="no-favorites">No favorites yet.</div>
+          ) : (
+            favorites.map((movie) =>
+              movie.id ? <MoviesCard key={movie.id} movie={movie} /> : null
+            )
           )}
         </div>
-      )}
+      </div>
     </div>
   );
 }

@@ -17,7 +17,7 @@ function FavoriteButton({ movie }) {
 
   return (
     <button onClick={handleClick}>
-      {isFavorite ? "Remove from Favorites" : "💘"}
+      {isFavorite ? "Remove Favorite" : "💘"}
     </button>
   );
 }
