@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import MoviesCard from "../components/MoviesCard";
-import "./PageFavorites.css"; // Make sure this path is correct
+import "./PageFavorites.css";
 
 function PageFavorites() {
   const { favorites } = useContext(GlobalContext);
