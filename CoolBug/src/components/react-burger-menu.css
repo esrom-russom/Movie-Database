@@ -43,7 +43,8 @@
     top: 0;
     right: 0;
     width: 250px; /* Fixed width for the menu */
-    max-height: 100vh; /* Prevent scrolling by ensuring it doesn't exceed the screen height */
+    /* max-height: 100vh; Prevent scrolling by ensuring it doesn't exceed the screen height */
+    height: 0; /* Allow the menu to grow */
     padding: 20px;
     font-size: 1.15em;
     display: flex;
