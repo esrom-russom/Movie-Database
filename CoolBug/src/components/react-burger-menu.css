@@ -1,3 +1,4 @@
+/* Burger icon styles */
 .bm-burger-button {
     display: block;
     position: fixed;
@@ -6,17 +7,58 @@
     top: 20px;
 }
 
+/* Hamburger icon button */
+.hamburger-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    left: 85%;
+    top: 0.5rem;
+    z-index: 1000;
+}
+
+.hamburger-icon img {
+    width: 36px;
+    height: auto;
+}
+
+/* Hide the hamburger icon on larger screens */
+@media (min-width: 768px) {
+    .bm-burger-button,
+    .hamburger-icon {
+        display: none;
+    }
+}
+
+/* Burger bars styling */
 .bm-burger-bars {
-    background: #333333; /* Change to desired color */
+    background: #333333;
 }
 
+/* Menu container styling */
 .bm-menu {
-    background: #333333; /* Change to desired color */
-    padding: 2.5em 1.5em 0;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px; /* Fixed width for the menu */
+    max-height: 100vh; /* Prevent scrolling by ensuring it doesn't exceed the screen height */
+    padding: 20px;
     font-size: 1.15em;
-    height: 100%; /* Change to 100% to display all contents */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 999;
+    transition: none; /* Disable transition for smooth opening */
+    overflow: hidden; /* Prevent scrolling */
+    .react-burger-cross-btn {
+        color: aliceblue;
+    }
+    
 }
 
+/* Menu item styles */
 .menu-item {
     text-decoration: none;
     color: #b8b7ad;
@@ -29,15 +71,9 @@
     color: #fff;
 }
 
-@media (min-width: 600px) {
-    .bm-burger-button {
-        display: none;
-    }
-    .hamburger-icon {
-        display: none;
-    }
-}
+/* Close button for burger menu */
 
-.react-burger-cross-btn {
-    color: aliceblue;
+/* Ensure menu is visible when open */
+.bm-menu-wrap {
+    position: static; /* Keep the menu visible without sliding */
 }

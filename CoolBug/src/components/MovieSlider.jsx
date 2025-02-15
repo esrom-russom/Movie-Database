@@ -11,7 +11,7 @@ const MovieSlider = ({ title, movies }) => {
     infinite: true,
     speed: 500,
     slidesToShow: 5, // Adjust as needed
-    slidesToScroll: 2,
+    slidesToScroll: 2.5,
     responsive: [
       {
         breakpoint: 480,
