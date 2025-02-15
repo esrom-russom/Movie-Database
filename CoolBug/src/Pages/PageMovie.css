@@ -1,3 +1,5 @@
+
+
 .page-movie {
   position: relative;
   padding: 40px;
@@ -169,63 +171,201 @@
 
 /* Adjustments for Mobile Responsiveness */
 @media (max-width: 768px) {
+  body {
+    background-color: #0c1415;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  
+  .page-movie {
+    position: relative;
+    padding: 0 2rem;
+    width: 100%; /* Ensures the page takes up full width */
+    max-width: 100vw; /* Prevents any horizontal overflow */
+    box-sizing: border-box; /* Ensures padding does not affect the width */
+  }
+  
+  .page-movie::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    background-color: #0c1415;
+  }
+  
   .movie-banner {
-    height: 40vh; /* Adjust the height on mobile */
+    position: relative;
+    height: 40vh; /* Adjust height for mobile */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
-
-  .movie-content {
-    grid-template-columns: 1fr;
-    padding: 1rem; /* Reduce padding for smaller screens */
-  }
-
-  .movie-poster {
-    margin-top: 2rem; /* Ensure poster doesn't overlap with title */
-    max-width: 300px;
-    margin-top:5rem ; /* Center poster on mobile */
-  }
-
-  .movie-header h1 {
-    font-size: 2rem;
-  }
-
+  
   .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 26, 0.4) 0%,
+      rgba(26, 26, 26, 0.8) 60%,
+      #0c1415 100%
+    );
+    display: flex;
+    align-items: flex-end;
     padding: 1rem;
   }
-
-  .cast-list {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1.5rem;
-    padding: 0.8rem;
+  
+  .movie-header {
+    width: 100%;
+    text-align: center;
   }
-
+  
+  .movie-header h1 {
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .movie-meta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .movie-content {
+    margin-top: -40px;
+    padding: 1rem 0;
+    display: block;
+    width: 100%;
+  }
+  
+  .movie-poster {
+    margin: 0 auto;
+    max-width: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-poster img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .movie-details {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .overview h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .overview p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cccccc;
+  }
+  
+  .additional-info {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .cast-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cast-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .cast-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .cast-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
   .actor-image {
     width: 100px;
     height: 100px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
   }
-
+  
+  .actor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  
   .actor-name {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
-
+  
   .actor-character {
     font-size: 0.8rem;
   }
-
+  
   .companies-list {
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
     padding: 1rem;
+    margin-top: 2rem;
   }
-
+  
   .company-item {
     padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
   }
-
+  
   .company-logo {
-    height: 50px;
+    height: 40px;
   }
-
+  
   .company-name {
     font-size: 0.8rem;
+    text-align: center;
   }
+  
 }
