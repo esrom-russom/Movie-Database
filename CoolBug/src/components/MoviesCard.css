@@ -62,10 +62,7 @@
     background: none;
     border: none;
     color: white;
-    font-size: 1.5em;
+    width: 5rem;
     cursor: pointer;
 }
 
-.rating-and-favorite button:hover {
-    color: gold;
-}

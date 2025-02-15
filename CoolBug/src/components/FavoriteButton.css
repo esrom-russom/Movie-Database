@@ -1,3 +1,4 @@
+/* FavoriteButton.css */
 .favorite-button {
     background: none;
     border: none;
@@ -6,37 +7,49 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: relative;  /* If you need absolute positioning */
     transition: transform 0.2s ease;
-}
-
-/* Add glow effect and color change when favorited */
-.favorited .favorite-icon {
-    filter: invert(32%) sepia(100%) saturate(279%) hue-rotate(20deg) brightness(103%) contrast(110%);
-    animation: glow 1.5s ease-in-out infinite alternate; /* Glow effect */
-}
-
-/* Glowing effect for favorited icon */
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
-    }
-    100% {
-        box-shadow: 0 0 18px rgba(255, 0, 0, 0.7);
-    }
-}
-
-/* Prevent borders and focus outlines on the icon */
-.favorite-icon {
-    border: none;
-    outline: none;
-}
-
-/* Styling for "Remove Favorite" text */
-.favorite-text {
+    width: 1rem;     
+    height: 1rem;   
+  }
+  
+  .favorite-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .favorite-button:active {
+    transform: scale(0.9);
+  }
+  
+  .favorite-button.favorited .favorite-icon {
+    filter: invert(51%) sepia(97%) saturate(626%) hue-rotate(1deg) brightness(100%) contrast(105%);
+  }
+  
+  .favorite-text {
     font-size: 14px;
     font-weight: bold;
-    color: black;
+    color: white;    
     white-space: nowrap;
-    margin-left: 8px; /* Space between icon and text */
-}
+      width: 1rem;   
+      height: 1rem;     
+      display: flex;        
+      align-items: center;  
+      justify-content: center; 
+  }
+  
+  .favorite-button.favorited:hover .favorite-icon {
+    display: none;
+  }
+  
+  .favorite-icon img{
+    border: none;
+    outline: none;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .favorite-text {
+      display: none;
+    }
+  }

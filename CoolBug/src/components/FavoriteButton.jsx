@@ -24,7 +24,6 @@ function FavoriteButton({ movie }) {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {/* Show "Remove Favorite" text when the movie is favorited and hovered */}
       {isFavorite && hover ? (
         <span className="favorite-text">Remove Favorite</span>
       ) : (
