@@ -8,10 +8,6 @@ function PageFavorites() {
   return (
     <div className="page-favorites">
       <h1>Favorites</h1>
-      <p className="favorites-count">
-        You have {favorites.length}{" "}
-        {favorites.length === 1 ? "favorite" : "favorites"}.
-      </p>
 
       <div className="favorites-grid-wrapper">
         <div className="favorites-grid">
