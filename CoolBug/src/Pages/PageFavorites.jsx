@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import MoviesCard from "../components/MoviesCard";
-import "./PageFavorites.css";
+import "./PageFavorites.css"; // Make sure this path is correct
 
 function PageFavorites() {
   const { favorites } = useContext(GlobalContext);
   return (
     <div className="page-favorites">
       <h1>Favorites</h1>
+      <p className="favorites-count">
+        You have {favorites.length}{" "}
+        {favorites.length === 1 ? "favorite" : "favorites"}.
+      </p>
 
       <div className="favorites-grid-wrapper">
         <div className="favorites-grid">

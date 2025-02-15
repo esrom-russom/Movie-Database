@@ -21,7 +21,7 @@
   
   .page-favorites h1 {
     text-align: center;
-    margin-bottom: 1.25rem;
+    margin-top: 3.25rem;
     color: #fff;
     font-size: 1.75rem;
   }
@@ -58,7 +58,7 @@
     .favorites-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
-      max-width: 75rem;
+      max-width: 60rem;
     }
   }
   
@@ -69,6 +69,9 @@
     }
     .page-favorites h1 {
       font-size: 1.5rem;
+     
+
+      
     }
     .favorites-grid {
       max-width: 95%;
