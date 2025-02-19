@@ -5,6 +5,7 @@ import "./PageFavorites.css"; // Make sure this path is correct
 
 function PageFavorites() {
   const { favorites } = useContext(GlobalContext);
+
   return (
     <div className="page-favorites">
       <h1>Favorites</h1>

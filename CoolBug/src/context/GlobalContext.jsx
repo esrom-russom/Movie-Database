@@ -12,13 +12,10 @@ function GlobalProvider({ children }) {
   function loadFavsFromLocalStorage() {
     try {
       const favs = localStorage.getItem("favorites");
-      if (favs) {
-        return JSON.parse(favs);
-      }
-      return;
+      return favs ? JSON.parse(favs) : [];
     } catch (error) {
       console.error("Error loading favorites from local storage:", error);
-      return;
+      return [];
     }
   }
 

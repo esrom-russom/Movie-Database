@@ -1,0 +1,10 @@
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /esrom-j-robin-movie-app/
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /esrom-j-robin-movie-app/index.html [L]
+</IfModule>

@@ -9,7 +9,7 @@ import { GlobalProvider } from "../context/GlobalContext";
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/esrom-j-robin-movie-app/">
       <GlobalProvider>
         <Header />
         <Routes>
